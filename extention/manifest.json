@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Wikipedia Sentence Highlighter",
+  "version": "1.0",
+  "description": "Highlights sentences from Wikipedia using an API.",
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "http://localhost:5001/summarize",
+    "tabs",
+    "storage"
+  ],
+  "icons": {
+    "48": "icone.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
